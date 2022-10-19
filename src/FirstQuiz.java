@@ -92,10 +92,15 @@ public class FirstQuiz {
         for (int i = 0; i < arr.length; i++) {
             list.add(arr[i]);
         }
+        System.out.println("Arithmetic sequences");
         for (int i = 0; i < list.size()-1; i++) {
             for (int j = 3+i; j <= list.size(); j++) {
                 if(arithmetic(list.subList(i,j))) {
                     count++;
+                    for (int k = 0; k < list.subList(i,j).size(); k++) {
+                        System.out.print(list.subList(i, j).get(k) + " ");
+                    }
+                    System.out.println();
                 }
             }
         }
@@ -110,6 +115,9 @@ public class FirstQuiz {
         int[] array2 = {1, 3, 5, 6, 7, 8};
         int a = 4, b = 2, c = 3, d = 5;
         System.out.println("Maximum of " + a + " " + b + " " + c + " " + d + " is " + max(a, b, c, d));
+
+        System.out.println("--------------------------");
+
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + " ");
         }
@@ -119,7 +127,10 @@ public class FirstQuiz {
         System.out.println("The second minimum is: " + secondMin(array));
         countOfRepeats(array);
 
-        arithmeticSequences(array);
-//        System.out.println(arithmetic(5, 6, 7));
+        System.out.println("--------------------------");
+
+        arithmeticSequences(array1);
+
+        System.out.println("--------------------------");
     }
 }
