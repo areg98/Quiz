@@ -73,7 +73,7 @@ public class FirstQuiz {
     //Count the Arithmetic sequences in the Array of size at least 3
     //Given an array arr[] of size N, the task is to find the count of all arithmetic sequences in the array.
 
-    public static boolean arithmetic(List<Integer> list){
+    public static boolean isArithmetic(List<Integer> list){
         int temp = list.get(1) - list.get(0);
         int count = 0;
         for (int i = 1; i < list.size(); i++) {
@@ -95,7 +95,7 @@ public class FirstQuiz {
         System.out.println("Arithmetic sequences");
         for (int i = 0; i < list.size()-1; i++) {
             for (int j = 3+i; j <= list.size(); j++) {
-                if(arithmetic(list.subList(i,j))) {
+                if(isArithmetic(list.subList(i,j))) {
                     count++;
                     for (int k = 0; k < list.subList(i,j).size(); k++) {
                         System.out.print(list.subList(i, j).get(k) + " ");
