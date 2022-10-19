@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class FirstQuiz {
 
     public static void sort(int[] myArr) {
@@ -67,13 +70,44 @@ public class FirstQuiz {
         }
     }
 
+    //Count the Arithmetic sequences in the Array of size at least 3
+    //Given an array arr[] of size N, the task is to find the count of all arithmetic sequences in the array.
 
+    public static boolean arithmetic(List<Integer> list){
+        int temp = list.get(1) - list.get(0);
+        int count = 0;
+        for (int i = 1; i < list.size(); i++) {
+            if (list.get(i) - list.get(i-1) == temp) count++;
+        }
+        return (count == list.size()-1)?true:false;
+    }
+
+    public static void arithmeticSequences(int[] arr){
+        int count = 0;
+        if (arr.length < 3) {
+            System.out.println("Too small array");
+            return;
+        }
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < arr.length; i++) {
+            list.add(arr[i]);
+        }
+        for (int i = 0; i < list.size()-1; i++) {
+            for (int j = 3+i; j <= list.size(); j++) {
+                if(arithmetic(list.subList(i,j))) {
+                    count++;
+                }
+            }
+        }
+        System.out.println("count: " + count);
+    }
 
     
 
     public static void main(String[] args) {
-        int[] array = {4, 8, 3, 9, 4, 2, 1, 7, 3, 8, 4, 4};
-        
+        int[] array = {4, 8, 12, 3, 9, 4, 2, 1, 7, 3, 8, 4, 4};
+        int[] array1 = {1,2,3,4};
+        int[] array2 = {1, 3, 5, 6, 7, 8};
         int a = 4, b = 2, c = 3, d = 5;
         System.out.println("Maximum of " + a + " " + b + " " + c + " " + d + " is " + max(a, b, c, d));
         for (int i = 0; i < array.length; i++) {
@@ -85,7 +119,7 @@ public class FirstQuiz {
         System.out.println("The second minimum is: " + secondMin(array));
         countOfRepeats(array);
 
-
-
+        arithmeticSequences(array);
+//        System.out.println(arithmetic(5, 6, 7));
     }
 }
