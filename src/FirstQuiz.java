@@ -79,7 +79,7 @@ public class FirstQuiz {
         for (int i = 1; i < list.size(); i++) {
             if (list.get(i) - list.get(i-1) == temp) count++;
         }
-        return (count == list.size()-1)?true:false;
+        return (count == list.size()-1);
     }
 
     public static void arithmeticSequences(int[] arr){
