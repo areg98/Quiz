@@ -16,12 +16,8 @@ public class FirstQuiz {
     }
 
     // 1.1.  Find the biggest number between four numbers.
-    public static int max(int a, int b, int c, int d) {
-        int max = a;
-        if (b > max) max = b;
-        else if (c > max) max = c;
-        else if (d > max) max = d;
-        return max;
+    public static int max(int a, int b) {
+        return (a>b)?a:b;
     }
 
     //1.2.  Write a Java program to find smallest element of a given array
@@ -114,7 +110,8 @@ public class FirstQuiz {
         int[] array1 = {1,2,3,4};
         int[] array2 = {1, 3, 5, 6, 7, 8};
         int a = 4, b = 2, c = 3, d = 5;
-        System.out.println("Maximum of " + a + " " + b + " " + c + " " + d + " is " + max(a, b, c, d));
+        System.out.print("Maximum of " + a + " " + b + " " + c + " " + d + " is ");
+        System.out.print(max(max(a,b),max(c,d));
 
         System.out.println("--------------------------");
 
