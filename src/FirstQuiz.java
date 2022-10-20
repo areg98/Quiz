@@ -118,9 +118,9 @@ public class FirstQuiz {
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + " ");
         }
-        System.out.println("\nMinimum: " + min(array));
-
+        System.out.println();
         System.out.println("Greater then first is: " + greatersThenFirst(array));
+        System.out.println("Minimum: " + min(array));
         System.out.println("The second minimum is: " + secondMin(array));
         countOfRepeats(array);
 
