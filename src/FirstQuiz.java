@@ -111,7 +111,7 @@ public class FirstQuiz {
         int[] array2 = {1, 3, 5, 6, 7, 8};
         int a = 4, b = 2, c = 3, d = 5;
         System.out.print("Maximum of " + a + " " + b + " " + c + " " + d + " is ");
-        System.out.print(max(max(a,b),max(c,d));
+        System.out.print(max(max(a,b),max(c,d)));
 
         System.out.println("--------------------------");
 
