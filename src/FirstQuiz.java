@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,12 +58,11 @@ public class FirstQuiz {
     public static void countOfRepeats(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             int count = 0;
-            for (int j = 0; j < arr.length; j++) {
-                if(i > j && arr[i] == arr[j])
-                    break;
-                else if(arr[i] == arr[j]) count++;
+            for (int j = i; j < arr.length; j++) {
+                if (arr[i] == arr[j]) count++;
             }
-            if (count > 0) System.out.println(arr[i] + ": " + count);
+            System.out.println(arr[i] + ": " + count);
+
         }
     }
 
@@ -114,7 +114,6 @@ public class FirstQuiz {
         System.out.print(max(max(a,b),max(c,d)));
 
         System.out.println("--------------------------");
-
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + " ");
         }
@@ -129,5 +128,6 @@ public class FirstQuiz {
         arithmeticSequences(array1);
 
         System.out.println("--------------------------");
+//        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
     }
 }
